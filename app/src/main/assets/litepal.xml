@@ -1,0 +1,9 @@
+<litepal>
+    <dbname value="bubble_weather"/>
+    <version value="1"/>
+    <list>
+        <mapping class="com.bubbleweather.android.db.Province"/>
+        <mapping class="com.bubbleweather.android.db.City"/>
+        <mapping class="com.bubbleweather.android.db.County"/>
+    </list>
+</litepal>
