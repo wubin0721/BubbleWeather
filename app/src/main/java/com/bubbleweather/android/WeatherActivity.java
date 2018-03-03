@@ -1,5 +1,6 @@
 package com.bubbleweather.android;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 
 import com.bubbleweather.android.gson.Forecast;
 import com.bubbleweather.android.gson.Weather;
+import com.bubbleweather.android.service.AutoUpdateService;
 import com.bubbleweather.android.util.HttpUtil;
 import com.bubbleweather.android.util.Utility;
 
@@ -239,5 +241,7 @@ public class WeatherActivity extends AppCompatActivity {
         sportText.setText(sport);
 
         weatherLayout.setVisibility(View.VISIBLE);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 }
