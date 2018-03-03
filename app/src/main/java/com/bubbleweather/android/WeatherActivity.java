@@ -25,6 +25,7 @@ import com.bubbleweather.android.gson.Weather;
 import com.bubbleweather.android.service.AutoUpdateService;
 import com.bubbleweather.android.util.HttpUtil;
 import com.bubbleweather.android.util.Utility;
+import com.bumptech.glide.Glide;
 
 import java.io.IOException;
 
@@ -125,16 +126,16 @@ public class WeatherActivity extends AppCompatActivity {
 
         String bingPic = pref.getString("bing_pic",null);
         if(bingPic != null){
-            //Glide.with(this).load(bingPic).into(bingPicImg);
+            Glide.with(this).load(bingPic).into(bingPicImg);
         }else{
-            //loadBingPic();
+            loadBingPic();
         }
 
     }
 
     public void requestWeather(final String weatherId){
 
-        //loadBingPic();
+        loadBingPic();
 
         String weatherUrl = "http://guolin.tech/api/weather?cityid="+
                 weatherId + "&key=bc0418b57b2d4918819d3974ac1285d9";
@@ -191,7 +192,7 @@ public class WeatherActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        //Glibe.with(WeatherActivity.this).load(bingPic).into(bingPicImg);
+                        Glide.with(WeatherActivity.this).load(bingPic).into(bingPicImg);
                     }
                 });
             }
